@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Muy importante para que el padding y borders no agranden los elementos */
+}
+
+body {
+    background-color: aqua;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+section {
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap; /* Para que los hijos bajen a otra fila si no caben */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    gap: 20px; /* Espacio entre los elementos hijos */
+    padding: 20px;
+}
+
+.poema {
+    background-color: pink;
+    width: 600px;
+    height: 550px;
+    padding: 50px;
+    border: 5px solid black; /* El border que tenías no tenía estilo ni tamaño correcto */
+    box-sizing: border-box;
+}
+
+.DIOSA {
+    background-color: rgba(232, 111, 131, 0.968);
+    width: 600px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 5px solid black;
+}
+
+.MIPRECIOSA {
+    width: 400px;
+    mask:
+       radial-gradient(at 70% 31%,#000 29%,#0000 30%),
+       radial-gradient(at 30% 31%,#000 29%,#0000 30%),
+       linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+    clip-path: polygon(-41% 0,50% 91%, 141% 0);
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 1300px) {
+    .poema, .DIOSA {
+        width: 90%; /* Que ocupen casi todo el ancho en pantallas medianas */
+        height: auto; /* Para que no se corte el contenido */
+        padding: 20px;
+    }
+    .MIPRECIOSA {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        flex-direction: column; /* Apilar verticalmente en móviles */
+        padding: 10px;
+    }
+    .poema, .DIOSA {
+        width: 100%;
+        padding: 15px;
+        height: auto;
+    }
+    .MIPRECIOSA {
+        width: 100%;
+    }
+}
